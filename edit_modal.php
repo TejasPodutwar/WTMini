@@ -6,7 +6,7 @@
     <?php include 'update.php';?>
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Add New Problem
+            Edit This Problem
         </button>
         
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -17,7 +17,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div> 
                     <div class="modal-body">
-                        <form action="update.php" method="post">
+                        <form action="edit_modal.php" method="post">
                             <div class="mb-4">
                                 <label for="problem" class="form-label">Problem Statement</label>
                                 <input class="form-control" id="problem" type="text" name="problem">
@@ -67,7 +67,7 @@
                             <?php
          
                             if($update == true){
-                            echo "Thanks for submitting your form. We are happy to see you joining us for the US trip";
+                            echo "update - testing - works";
                             }
                             ?> 
                           </form>
@@ -81,35 +81,3 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     </body>
 </html>
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Welcome to Travel Form</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Sriracha&display=swap" rel="stylesheet">
-    
-</head>
-<body>
-   <img class="bg" src="bg.jpg" alt="Aurora"> 
-    <div class="container">
-        <h1>Welcome to Winter Trip form</h1>
-            <p>Enter your details and submit this form to confirm your participation in the trip </p>
-           
-            <form action="index.php" method="post">
-                <input type="text" name="name" id="name" placeholder="Enter your name">
-                <input type="text" name="age" id="age" placeholder="Enter your Age">
-                <input type="text" name="gender" id="gender" placeholder="Enter your gender">
-                <input type="email" name="email" id="email" placeholder="Enter your email">
-                <input type="tel" name="phone" id="phone" placeholder="Enter your phone">
-                <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Enter any other information here"></textarea>
-                <button class="btn">Submit</button>
-            </form>
-    </div>
-    <script src="index.js"></script>
-
-</body>
-</html> -->
