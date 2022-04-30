@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Estonia&family=Maven+Pro&family=Parisienne&family=Roboto:wght@300&display=swap");
+:root {
+  --pure: #fff;
+  --turquoise: #4cbfa6;
+  --soft-lilac: #f6ebf4;
+  --purple: #482673;
+  --orchid: #ed0b70;
+  --digi-denim: #301008;
+  --lighter-grey: #dce1e3;
+}
+
+body {
+  background-color: #f6ebf4;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pure);
+}
+
+header {
+  margin: 3rem 0;
+  padding: 8px;
+  text-align: center;
+}
+table {
+  vertical-align: middle;
+}
+
+td {
+  padding: 16px 0 !important;
+}
+
+th {
+  font-size: 18px;
+}
+
+.cus-center {
+  text-align: center;
+}
+
+#dsa_logo {
+  color: var(--purple);
+  font-weight: bold;
+  margin: 0 12px;
+}
+
+.btn-purple {
+  background-color: var(--purple);
+  color: var(--pure);
+  padding: 12px 16px;
+  border-radius: 24px;
+  font-weight: 700;
+}
+
+.view-btn {
+  background-color: var(--turquoise);
+  color: var(--pure);
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.icon_fas {
+  padding: 10px;
+}
