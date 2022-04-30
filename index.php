@@ -21,12 +21,22 @@
     <title>DSA Tracker</title>
   </head>
   <body>
+
+    <?php include 'insert.php';?>
+
+    <?php 
+      $mysqli = new mysqli('localhost','root','Tejasgp85','dsa_tracker') or die(mysqli_error($mysqli));
+      $result = $mysqli->query("SELECT * FROM track") or die($mysqli->error);
+    ?>
+    
     <header>
       <h2 id="dsa_logo">DSA Tracker</h2>
     </header>
     <div class="container">
       <div class="mt-5 mb-4">
-        <a href="#" class="btn-purple">Add New Problem</a>
+        <button type="button" class="btn-purple" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Add New Problem
+        </button>
       </div>
       <div class="my-5">
         <table class="table table-striped table-hover">
@@ -41,51 +51,24 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>1</th>
-              <td>4Sum</td>
-              <td>Array</td>
-              <td>
-                <input type="checkbox" class="chkBox" />
-              </td>
-              <td style="width: 10vw">
-                <a class="view-btn"> View Problem </a>
-              </td>
-              <td>
-                <span class="icon_fas"><i class="fa-solid fa-pencil"></i></span>
-                <span class="icon_fas"><i class="fa-solid fa-trash"></i></span>
-              </td>
-            </tr>
-            <tr>
-              <th>2</th>
-              <td>4Sum</td>
-              <td>Array</td>
-              <td>
-                <input type="checkbox" class="chkBox" />
-              </td>
-              <td style="width: 10vw">
-                <a class="view-btn"> View Problem </a>
-              </td>
-              <td>
-                <span class="icon_fas"><i class="fa-solid fa-pencil"></i></span>
-                <span class="icon_fas"><i class="fa-solid fa-trash"></i></span>
-              </td>
-            </tr>
-            <tr>
-              <th>3</th>
-              <td>4Sum</td>
-              <td>Array</td>
-              <td>
-                <input type="checkbox" class="chkBox" />
-              </td>
-              <td style="width: 10vw">
-                <a class="view-btn"> View Problem </a>
-              </td>
-              <td>
-                <span class="icon_fas"><i class="fa-solid fa-pencil"></i></span>
-                <span class="icon_fas"><i class="fa-solid fa-trash"></i></span>
-              </td>
-            </tr>
+            <?php $sr_no = 1;?>
+            <?php while($row = $result->fetch_assoc()):?>
+              <tr>
+                <th><?php echo $sr_no++ ?></th>
+                <td><?php echo $row['problem']?></td>
+                <td><?php echo $row['type']?></td>
+                <td>
+                  <?php echo $row['status']?>
+                </td>
+                <td style="width: 10vw">
+                  <a class="view-btn" target="_blank" href=<?php echo $row['link']?>> View Problem </a>
+                </td>
+                <td>
+                  <span class="icon_fas"><i class="fa-solid fa-pencil"></i></span>
+                  <span class="icon_fas"><i class="fa-solid fa-trash"></i></span>
+                </td>
+              </tr>
+            <?php endwhile; ?>
           </tbody>
         </table>
       </div>
