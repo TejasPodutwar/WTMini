@@ -23,9 +23,10 @@
   <body>
     <?php include 'edit.php'?>
     <?php include 'insert.php';?>
+    <?php include 'delete.php';?>
 
     <?php 
-      $mysqli = new mysqli('localhost','root','Tejasgp85','dsa_tracker') or die(mysqli_error($mysqli));
+      $mysqli = new mysqli('localhost','root','nerf','dsa_tracker') or die(mysqli_error($mysqli));
       $result = $mysqli->query("SELECT * FROM track") or die($mysqli->error);
     ?>
 
@@ -55,7 +56,6 @@
             <?php $sr_no = 1;?>
             <?php while($row = $result->fetch_assoc()):?>
               <?php $data=$row;include("modal.php");?>
-            
               <tr>
                 <th><?php echo $sr_no++ ?></th>
                 <td><?php echo $row['problem']?></td>
@@ -70,7 +70,9 @@
                   <span class="icon_fas" type="button" data-bs-toggle="modal" data-bs-target=<?php echo "#staticBackdrop".$row["id"] ?>>
                     <i class="fa-solid fa-pencil"></i>
                   </span>
-                  <span class="icon_fas"><i class="fa-solid fa-trash"></i></span>
+                  <span class="icon_fas">
+                    <form style="display: inline;" method="post" action="index.php"><button style="display: inline;padding: 0;border: none;background: none;" name="delete" value=<?php echo $row["id"] ?> type="submit"><i class="fa-solid fa-trash"></i></button></form>
+                  </span>
                 </td>
               </tr>
             <?php endwhile; ?>
