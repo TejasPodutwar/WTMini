@@ -17,12 +17,12 @@
         $status = $_POST["status"];
         $level = $_POST["level"];
     
-        $insert = $_POST["insert"];
+        $insert = $_POST["submit"];
         if($con->connect_error){
             echo "<script>alert('Connection Error');</script>";
         }
 
-        if($insert == TRUE){
+        if($insert == -1){
             $sqlinsert = "INSERT INTO $table(problem, link, type, approach, time_complexity, space_complexity, status, level) VALUES('$problem', '$link', '$type', '$approach', '$time_complexity', '$space_complexity', '$status', '$level')";
             if(!($con->query($sqlinsert) == TRUE)){
                 echo "<script>alert('Record Insertion Failed, please check Data Types');</script>";
@@ -30,8 +30,6 @@
         }
     }
 ?>
-
-
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
@@ -87,9 +85,11 @@
                         <option value="Hard">Hard</option>
                     </select>
     
-                    <button type="submit" name="insert" value="insert" class="btn btn-primary">Submit</button>
+                    <button type="submit" name="submit" value="-1" class="btn btn-primary">Submit</button>
                     </form>
             </div>
         </div>
     </div>
 </div>
+
+

@@ -21,13 +21,14 @@
     <title>DSA Tracker</title>
   </head>
   <body>
-
+    <?php include 'edit.php'?>
     <?php include 'insert.php';?>
 
     <?php 
       $mysqli = new mysqli('localhost','root','Tejasgp85','dsa_tracker') or die(mysqli_error($mysqli));
       $result = $mysqli->query("SELECT * FROM track") or die($mysqli->error);
     ?>
+
     
     <header>
       <h2 id="dsa_logo">DSA Tracker</h2>
@@ -53,6 +54,8 @@
           <tbody>
             <?php $sr_no = 1;?>
             <?php while($row = $result->fetch_assoc()):?>
+              <?php $data=$row;include("modal.php");?>
+            
               <tr>
                 <th><?php echo $sr_no++ ?></th>
                 <td><?php echo $row['problem']?></td>
@@ -64,7 +67,9 @@
                   <a class="view-btn" target="_blank" href=<?php echo $row['link']?>> View Problem </a>
                 </td>
                 <td>
-                  <span class="icon_fas"><i class="fa-solid fa-pencil"></i></span>
+                  <span class="icon_fas" type="button" data-bs-toggle="modal" data-bs-target=<?php echo "#staticBackdrop".$row["id"] ?>>
+                    <i class="fa-solid fa-pencil"></i>
+                  </span>
                   <span class="icon_fas"><i class="fa-solid fa-trash"></i></span>
                 </td>
               </tr>
