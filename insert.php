@@ -3,7 +3,7 @@
         if(isset($_POST['submit'])){
             $servername="localhost";
             $username="root";
-            $password="nerf";
+            $password="Tejasgp85";
             $dbname="dsa_tracker";
             $table="track";
         

@@ -4,7 +4,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(isset($_POST['submit'])){
     $server = "localhost";
     $username = "root";
-    $password = "nerf";
+    $password = "Tejasgp85";
 
     $con = mysqli_connect($server, $username, $password);
 

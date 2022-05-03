@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if( isset($_POST['delete']) ){
         $servername="localhost";
         $username="root";
-        $password="nerf";
+        $password="Tejasgp85";
         $dbname="dsa_tracker";
         $table="track";
         $id=$_POST["delete"];

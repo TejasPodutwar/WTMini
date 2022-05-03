@@ -67,3 +67,7 @@ th {
 .icon_fas {
   padding: 10px;
 }
+
+.problem_link_show:hover {
+  color: black;
+}

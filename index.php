@@ -26,7 +26,7 @@
     <?php include 'delete.php';?>
 
     <?php 
-      $mysqli = new mysqli('localhost','root','nerf','dsa_tracker') or die(mysqli_error($mysqli));
+      $mysqli = new mysqli('localhost','root','Tejasgp85','dsa_tracker') or die(mysqli_error($mysqli));
       $result = $mysqli->query("SELECT * FROM track") or die($mysqli->error);
     ?>
 
@@ -56,9 +56,14 @@
             <?php $sr_no = 1;?>
             <?php while($row = $result->fetch_assoc()):?>
               <?php $data=$row;include("modal.php");?>
+              <?php $data=$row; include("show.php"); ?>
               <tr>
                 <th><?php echo $sr_no++ ?></th>
-                <td><?php echo $row['problem']?></td>
+                <td>
+                  <span type="button" data-bs-toggle="modal" data-bs-target=<?php echo "#showBackdrop".$row["id"] ?>> 
+                    <?php echo $row['problem']?>
+                  </span>
+                </td>
                 <td><?php echo $row['type']?></td>
                 <td>
                   <?php echo $row['status']?>
