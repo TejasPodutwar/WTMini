@@ -9,52 +9,50 @@
                 <form action="index.php" method="post">
                     <div class="mb-4">
                         <label for="problem" class="form-label">Problem Statement</label>
-                        <input class="form-control" id="problem" type="text" name="problem" value=<?php echo $data['problem']?>>
+                        <input class="form-control" id="problem" type="text" name="problem" value="<?php echo $data["problem"]; ?>">
                     </div>
                     
                     <div class="mb-3">
                         <label for="link" class="form-label">Problem Link</label>
-                        <input class="form-control" id="link" type="text" name="link" value=<?php echo $data['problem']?>>
+                        <input class="form-control" id="link" type="text" name="link" value="<?php echo $data['link'];?>">
                     </div>
     
                     <div class="mb-3">
                         <label for="type" class="form-label">Problem Type</label>
-                        <input class="form-control" id="type" type="text" name="type" value=<?php echo $data['type']?>>
+                        <input class="form-control" id="type" type="text" name="type" value="<?php echo $data['type'];?>">
                     </div>
     
                     <div class="mb-3">
                         <label for="approach" class="form-label">Problem Approach</label>
-                        <textarea class="form-control" id="approach" name="approach" >
-                        <?php echo $data['approach']?>
-                        </textarea>
+                        <textarea class="form-control" id="approach" name="approach" ><?php echo trim($data['approach']);?></textarea>
                     </div>
     
                     <div class="mb-3">
                         <label for="time-complexity" class="form-label">Time Complexity</label>
-                        <input class="form-control" id="time-complexity" type="text" name="time-complexity" value=<?php echo $data['time_complexity']?>>
+                        <input class="form-control" id="time-complexity" type="text" name="time-complexity" value="<?php echo $data['time_complexity'];?>">
                     </div>
     
                     <div class="mb-3">
                         <label for="space-complexity" class="form-label">Space Complexity</label>
-                        <input class="form-control" id="space-complexity" type="text" name="space-complexity" value=<?php echo $data['space_complexity']?>>
+                        <input class="form-control" id="space-complexity" type="text" name="space-complexity" value="<?php echo $data['space_complexity'];?>">
                     </div>
     
                     <label for="select-status">Problem Status</label>
                     <select class="form-select form-control mb-3" id="select-status" name="status">
-                        <option <?php if($data['status'] == "To-do") echo "selected" ?> value="To-do">To-do</option>
-                        <option <?php if($data['status'] == "Doing") echo "selected" ?> value="Doing">Doing</option>
-                        <option <?php if($data['status'] == "Done") echo "selected" ?> value="Done">Done</option>
-                        <option <?php if($data['status'] == "Revise") echo "selected" ?> value="Revise">Revise</option>
+                        <option <?php if($data['status'] == "To-do") echo "selected" ;?> value="To-do">To-do</option>
+                        <option <?php if($data['status'] == "Doing") echo "selected" ;?> value="Doing">Doing</option>
+                        <option <?php if($data['status'] == "Done") echo "selected" ;?> value="Done">Done</option>
+                        <option <?php if($data['status'] == "Revise") echo "selected" ;?> value="Revise">Revise</option>
                     </select>
     
                     <label for="select-level">Problem Level</label>
                     <select class="form-select form-control mb-3" id="select-level" name="level">
-                        <option <?php if($data['level'] == "Easy") echo "selected" ?> value="Easy">Easy</option>
-                        <option <?php if($data['level'] == "Medium") echo "selected" ?> value="Medium">Medium</option>
-                        <option <?php if($data['level'] == "Hard") echo "selected" ?> value="Hard">Hard</option>
+                        <option <?php if($data['level'] == "Easy") echo "selected" ;?> value="Easy">Easy</option>
+                        <option <?php if($data['level'] == "Medium") echo "selected" ;?> value="Medium">Medium</option>
+                        <option <?php if($data['level'] == "Hard") echo "selected" ;?> value="Hard">Hard</option>
                     </select>
     
-                    <button type="submit" class="btn btn-primary" name="submit" value=<?php echo $data['id']?> >Submit</button>
+                    <button type="submit" class="btn btn-primary" name="submit" value="<?php echo $data['id'];?>" >Submit</button>
                 </form>
             </div>
         </div>
